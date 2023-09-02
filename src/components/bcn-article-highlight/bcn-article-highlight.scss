@@ -1,0 +1,40 @@
+$identifier: 'bcn-article-highlight';
+$class: '.#{$identifier}';
+
+#{$class} {
+    display: flex;
+    flex-direction: column;
+
+    #{$class}__image-wrapper {
+        width: 100%;
+        height: 60vw;
+    }
+
+    #{$class}__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    #{$class}__content {
+        padding-top: 1rem;
+    }
+
+    #{$class}--border {
+        #{$class}__image {
+            border-radius: 10px 10px 0 0;
+        }
+
+        #{$class}__content {
+            padding: 1rem;
+            border-right: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            border-left: 1px solid #cccccc;
+            border-radius: 0 0 10px 10px;
+        }
+    }
+
+    &-container {
+        container: bcn-article-highlight / inline-size;
+    }
+}

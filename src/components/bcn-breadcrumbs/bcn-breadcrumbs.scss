@@ -1,0 +1,49 @@
+@layer component {
+    .bcn-breadcrumbs {
+        margin: 8px 32px 0;
+        max-width: 960px;
+
+        @media (min-width: 1024px) {
+            margin: 12px auto 0;
+        }
+
+        &__list {
+            display: flex;
+            gap: 8px;
+            list-style-type: none;
+        }
+
+        &__item {
+            font-size: .75rem;
+            transition: all .3s ease;
+
+            &:not(.bcn-breadcrumbs__item--active) {
+                &::after {
+                    content: '>';
+                    text-decoration: none;
+                    margin-left: 8px;
+                    opacity: .6;
+                }
+            }
+
+            a {
+                color: inherit;
+                opacity: .6;
+            }
+
+            a:hover {
+                text-decoration: underline;
+                opacity: 1;
+
+                &::after {
+                    text-decoration: none;
+                    opacity: .6;
+                }
+            }
+
+            &--active {
+                opacity: 1;
+            }
+        }
+    }
+}

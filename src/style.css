@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#app {
+    width: 100%;
+}
+
+:root {
+    --primary: #537FE7;
+    --secondary: #C0EEF2;
+
+    --primary-btn: #537FE7;
+    --secondary-btn: #111827;
+
+    --primary-button-background: #537FE7;
+    --primary-button-color: #ffffff;
+}

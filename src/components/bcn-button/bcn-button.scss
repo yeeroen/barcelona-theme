@@ -1,0 +1,20 @@
+$identifier: 'bcn-button';
+$class: '.#{$identifier}';
+
+#{$class} {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: fit-content;
+    height: 40px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--primary-button-background);
+    color: var(--primary-button-color);
+    cursor: pointer;
+    text-decoration: none;
+
+    &--icon-position-right {
+        flex-direction: row-reverse;
+    }
+}

@@ -1,0 +1,92 @@
+$identifier: 'bcn-location-map';
+$class: '.' + $identifier;
+
+#{$class} {
+    background: var(--secondary);
+    overflow: hidden;
+    margin-top: 48px;
+    margin-inline: -32px;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      margin-inline: 0;
+      border-radius: 10px;
+    }
+
+    #{$class}__content {
+        padding: 24px 32px;
+
+        @media (min-width: 768px) {
+            padding: 40px;
+        }
+    }
+
+    #{$class}__title {
+        font-size: 1.75rem;
+        font-weight: 600;
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    #{$class}__description {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #{$class}__address {
+        margin-bottom: 1.5rem;
+
+        #{$class}__address-title {
+            margin-bottom: 0;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        #{$class}__address-text {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    #{$class}__contact {
+        #{$class}__contact-title {
+            margin-bottom: 0;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        #{$class}__contact-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            line-height: 1.5rem;
+
+            a {
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    #{$class}__map {
+        width: 100%;
+        height: 100%;
+
+        @media (max-width: 767px) {
+            height: 70vw;
+        }
+    }
+}
