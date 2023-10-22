@@ -1,5 +1,8 @@
 <template>
-    <div class="bcn-article-link-container">
+    <a
+        :href="link"
+        class="bcn-article-link-container"
+    >
         <div class="bcn-article-link" :class="classes">
             <div class="bcn-article-link__image-wrapper">
                 <bcn-image
@@ -20,14 +23,14 @@
                 <div class="bcn-article-link__content__text" v-html="text" />
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <script setup>
 import {computed} from 'vue';
 import BcnImage from '../bcn-image/bcn-image.vue';
 
-const { image, title, text, border } = defineProps({
+const { image, title, text, link, border } = defineProps({
     image: {
         type: Object,
         required: true,
@@ -39,6 +42,11 @@ const { image, title, text, border } = defineProps({
     },
 
     text: {
+        type: String,
+        required: true,
+    },
+
+    link: {
         type: String,
         required: true,
     },

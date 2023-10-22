@@ -5,6 +5,8 @@ $class: '.#{$identifier}';
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    color: inherit;
+    text-decoration: none;
 
     @media (min-width: 768px) {
         @container #{$identifier} (min-width: 480px) {
