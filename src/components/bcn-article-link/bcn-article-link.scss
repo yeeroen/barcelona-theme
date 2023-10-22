@@ -4,6 +4,7 @@ $class: '.#{$identifier}';
 #{$class} {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     @media (min-width: 768px) {
         @container #{$identifier} (min-width: 480px) {
@@ -26,6 +27,7 @@ $class: '.#{$identifier}';
     }
 
     #{$class}__image {
+        display: flex;
         width: 100%;
         height: 100%;
         border-radius: 10px;
