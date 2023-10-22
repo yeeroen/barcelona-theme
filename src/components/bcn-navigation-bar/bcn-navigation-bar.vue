@@ -22,14 +22,14 @@
                     v-if="!open"
                     class="bcn-navigation-bar__menu-icon"
                     icon="far fa-bars"
-                    @click="open = !open"
+                    @click="toggleNavigation"
                 />
 
                 <font-awesome-icon
                     v-else-if="open"
                     class="bcn-navigation-bar__menu-icon"
                     icon="far fa-xmark"
-                    @click="open = !open"
+                    @click="toggleNavigation"
                 />
             </div>
         </div>
@@ -98,6 +98,10 @@ const search = value => {
 };
 
 const open = ref(false);
+
+const toggleNavigation = () => {
+    open.value = !open.value;
+};
 </script>
 
 <style lang="scss" scoped>
