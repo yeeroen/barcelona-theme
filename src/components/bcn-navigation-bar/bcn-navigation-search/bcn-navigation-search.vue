@@ -1,5 +1,5 @@
 <template>
-    <form class="bcn-navigation-search" @submit="emit">
+    <form class="bcn-navigation-search" @submit.prevent="emit('search')">
         <div class="bcn-navigation-search__icon">
             <font-awesome-icon
                 icon="far fa-search"
@@ -18,6 +18,8 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+const emit = defineEmits(['search']);
 
 const { placeholder } = defineProps({
     placeholder: {
