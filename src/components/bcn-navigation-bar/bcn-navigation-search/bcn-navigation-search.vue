@@ -1,5 +1,5 @@
 <template>
-    <form class="bcn-navigation-search" @submit.prevent="emit('search')">
+    <form class="bcn-navigation-search" @submit.prevent="event => emit('search', event.target.value)">
         <div class="bcn-navigation-search__icon">
             <font-awesome-icon
                 icon="far fa-search"
