@@ -59,6 +59,7 @@
 <script setup>
 import { ref } from 'vue';
 import BcnNavigationSearch from '../bcn-navigation-bar/bcn-navigation-search/bcn-navigation-search.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const emit = defineEmits(['search']);
 
