@@ -5,10 +5,10 @@
         :class="classes"
         :href="link"
     >
-        <i
+        <font-awesome-icon
             v-if="icon"
             class="bcn-button__icon"
-            :class="icon"
+            :icon="icon"
         />
         <span class="bcn-button__label">
             {{ label }}
@@ -18,6 +18,7 @@
 
 <script setup>
 import {computed} from 'vue';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
 const { icon, iconPosition, label, link } = defineProps({
     icon: {

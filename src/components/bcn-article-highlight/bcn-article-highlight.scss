@@ -2,39 +2,81 @@ $identifier: 'bcn-article-highlight';
 $class: '.#{$identifier}';
 
 #{$class} {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    border-radius: 10px;
 
-    #{$class}__image-wrapper {
-        width: 100%;
-        height: 60vw;
+    @media (min-width: 768px) {
+        @container #{$identifier} (min-width: 640px) {
+            grid-template-columns: repeat(2, 1fr);
+            background-color: var(--secondary);
+        }
     }
 
-    #{$class}__image {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: #000000;
+        opacity: .2;
+        transition: opacity .3s ease-in-out;
+
+        @media (min-width: 768px) {
+            @container (min-width: 640px) {
+                display: none;
+            }
+        }
     }
 
-    #{$class}__content {
-        padding-top: 1rem;
+    &__content {
+        position: relative;
+        z-index: 2;
+        padding: 40px 32px;
+        color: #ffffff;
+
+        @media (min-width: 768px) {
+            @container #{$identifier} (min-width: 640px) {
+                padding: 60px 40px;
+                color: #000000;
+            }
+        }
     }
 
-    #{$class}--border {
-        #{$class}__image {
-            border-radius: 10px 10px 0 0;
+    &__title {
+        .u-highlight {
+            @media (max-width: 767px) {
+                color: #ffffff;
+            }
+        }
+    }
+
+    &__description {
+        margin-bottom: 1.25rem;
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+
+        @media (min-width: 768px) {
+            @container #{$identifier} (min-width: 640px) {
+                width: 50%;
+                height: 100%;
+                inset: 0 0 0 auto;
+            }
         }
 
-        #{$class}__content {
-            padding: 1rem;
-            border-right: 1px solid #cccccc;
-            border-bottom: 1px solid #cccccc;
-            border-left: 1px solid #cccccc;
-            border-radius: 0 0 10px 10px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
         }
     }
 
     &-container {
-        container: bcn-article-highlight / inline-size;
+        container: #{$identifier} / inline-size;
     }
 }

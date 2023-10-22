@@ -1,56 +1,63 @@
 <template>
     <div class="bcn-article-highlight-container">
-        <div class="bcn-article-highlight" :class="classes">
-            <div class="bcn-article-highlight__image-wrapper">
-                <bcn-image
-                    class="bcn-article-highlight__image"
-                    :source="image.source"
-                    :alt="image.alt"
-                    :sizes="[
-                        {
-                            width: 300,
-                            height: 170,
-                            media: '',
-                        },
-                    ]"
+        <div class="bcn-article-highlight">
+            <div class="bcn-article-highlight__content">
+                <div class="bcn-article-highlight__title u-header-3" v-html="title" />
+                <p class="bcn-article-highlight__description u-paragraph">
+                    {{ description }}
+                </p>
+                <bcn-button
+                    v-if="link"
+                    :label="buttonLabel"
+                    :link="link"
+                    icon="far fa-arrow-right"
+                    icon-position="right"
                 />
             </div>
-            <div class="bcn-article-highlight__content">
-                <div class="bcn-article-highlight__content__title" v-html="title" />
-                <div class="bcn-article-highlight__content__text" v-html="text" />
-            </div>
+            <bcn-image
+                class="bcn-article-highlight__image"
+                :source="image.source"
+                :alt="image.alt"
+                loading="lazy"
+                :sizes="image.sizes"
+            />
         </div>
     </div>
 </template>
-
 <script setup>
-const { image, title, text, border } = defineProps({
-    image: {
-        type: Object,
-        required: true,
-    },
+import BcnButton from "../bcn-button/bcn-button.vue";
+import BcnImage from "../bcn-image/bcn-image.vue";
 
+const { title, description, link, buttonLabel, image } = defineProps({
     title: {
         type: String,
         required: true,
     },
 
-    text: {
+    description: {
         type: String,
         required: true,
     },
 
-    border: {
-        type: Boolean,
-        default: false,
+    link: {
+        type: String,
+        required: false,
+        default: '',
+    },
+
+    buttonLabel: {
+        type: String,
+        required: false,
+        default: '',
+    },
+
+    image: {
+        type: Object,
+        required: true,
     },
 });
-
-const classes = computed(() => {
-    let classes = [];
-
-    if(border) classes.push('bcn-article-highlight--border');
-
-    return classes;
-});
 </script>
+
+<style lang="scss">
+@use 'bcn-article-highlight';
+</style>

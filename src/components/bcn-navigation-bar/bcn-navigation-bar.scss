@@ -1,0 +1,130 @@
+.bcn-navigation-bar {
+    width: 100%;
+
+    // REMOVE
+    margin-bottom: 40px;
+    // REMOVE
+
+    &__top {
+        position: relative;
+        z-index: 10;
+        background: #ffffff;
+        border-bottom: 1px solid #cccccc;
+
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 32px;
+
+            @media (min-width: 768px) {
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+        }
+
+        :deep(.bcn-navigation-search) {
+            display: none;
+
+            @media (min-width: 768px) {
+                display: flex;
+            }
+        }
+    }
+
+    &__logo {
+        height: 32px;
+    }
+
+    &__menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        z-index: 10;
+        display: none;
+        width: 100%;
+        border-bottom: 1px solid #cccccc;
+        background: #ffffff;
+
+        @media (min-width: 768px) {
+            position: relative;
+            display: block;
+            padding: 0;
+        }
+
+        &-inner {
+            @media (min-width: 768px) {
+                max-width: 1024px;
+                margin: 0 auto;
+                padding: 0 32px;
+            }
+        }
+
+        :deep(.bcn-navigation-search) {
+            width: calc(100% - 64px);
+            margin: 10px 32px;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        &-item {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px 32px;
+            border-top: 1px solid #cccccc;
+            background: #ffffff;
+            transition: all .3s ease;
+
+            @media (min-width: 768px) {
+                padding: 8px 10px;
+                border: none;
+            }
+
+            &:hover,
+            &:active {
+                background: #f8f8f8;
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        display: none;
+        position: absolute;
+        z-index: 9;
+        inset: 0;
+        background: #00000050;
+    }
+
+    &--open {
+        .bcn-navigation-bar__bottom {
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+
+        &::before {
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+    }
+}
