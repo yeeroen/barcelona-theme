@@ -19,17 +19,17 @@
                 />
 
                 <font-awesome-icon
-                    v-if="!open.value"
+                    v-if="!open"
                     class="bcn-navigation-bar__menu-icon"
                     icon="far fa-bars"
-                    @click="open = !open.value"
+                    @click="open = !open"
                 />
 
                 <font-awesome-icon
-                    v-else-if="open.value"
+                    v-else-if="open"
                     class="bcn-navigation-bar__menu-icon"
                     icon="far fa-xmark"
-                    @click="open = !open.value"
+                    @click="open = !open"
                 />
             </div>
         </div>
