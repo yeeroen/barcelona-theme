@@ -19,14 +19,14 @@
                 />
 
                 <font-awesome-icon
-                    v-if="!open"
+                    v-show="!open"
                     class="bcn-navigation-bar__menu-icon"
                     icon="far fa-bars"
                     @click="toggleNavigation"
                 />
 
                 <font-awesome-icon
-                    v-else-if="open"
+                    v-show="open"
                     class="bcn-navigation-bar__menu-icon"
                     icon="far fa-xmark"
                     @click="toggleNavigation"
@@ -76,20 +76,7 @@ const { logo, searchPlaceholder } = defineProps({
 
     navigation: {
         type: Array,
-        default: () => [
-            {
-                label: 'Home',
-                url: '/',
-            },
-            {
-                label: 'About',
-                url: '/about',
-            },
-            {
-                label: 'Contact',
-                url: '/contact',
-            }
-        ],
+        default: () => [],
     },
 });
 
