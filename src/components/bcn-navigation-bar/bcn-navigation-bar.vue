@@ -7,11 +7,13 @@
     >
         <div class="bcn-navigation-bar__top">
             <div class="bcn-navigation-bar__top-inner">
-                <img
-                    class="bcn-navigation-bar__logo"
-                    :src="logo"
-                    alt="Logo"
-                />
+                <a class="bcn-navigation-bar__logo-wrapper" href="/">
+                    <img
+                        class="bcn-navigation-bar__logo"
+                        :src="logo"
+                        alt="Logo"
+                    />
+                </a>
 
                 <bcn-navigation-search
                     :placeholder="searchPlaceholder"
