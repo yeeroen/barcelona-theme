@@ -10,7 +10,7 @@
                     v-if="link"
                     :label="buttonLabel"
                     :link="link"
-                    icon="far fa-arrow-right"
+                    :icon="faArrowRight"
                     icon-position="right"
                 />
             </div>
@@ -27,6 +27,7 @@
 <script setup>
 import BcnButton from "../bcn-button/bcn-button.vue";
 import BcnImage from "../bcn-image/bcn-image.vue";
+import { faArrowRight } from "@fortawesome/pro-regular-svg-icons";
 
 const { title, description, link, buttonLabel, image } = defineProps({
     title: {

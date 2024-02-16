@@ -2,7 +2,7 @@
     <form class="bcn-navigation-search" @submit.prevent="event => emit('search', event)">
         <div class="bcn-navigation-search__icon">
             <font-awesome-icon
-                icon="far fa-search"
+                :icon="faSearch"
             />
         </div>
 
@@ -18,6 +18,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import {faSearch} from '@fortawesome/pro-regular-svg-icons';
 
 const emit = defineEmits(['search']);
 

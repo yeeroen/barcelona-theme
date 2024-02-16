@@ -23,14 +23,14 @@
                 <font-awesome-icon
                     v-show="!open"
                     class="bcn-navigation-bar__menu-icon"
-                    icon="far fa-bars"
+                    :icon="faBars"
                     @click="toggleNavigation"
                 />
 
                 <font-awesome-icon
                     v-show="open"
                     class="bcn-navigation-bar__menu-icon"
-                    icon="far fa-xmark"
+                    :icon="faXmark"
                     @click="toggleNavigation"
                 />
             </div>
@@ -62,6 +62,7 @@
 import { ref } from 'vue';
 import BcnNavigationSearch from '../bcn-navigation-bar/bcn-navigation-search/bcn-navigation-search.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faBars, faXmark } from '@fortawesome/pro-regular-svg-icons';
 
 const emit = defineEmits(['search']);
 
