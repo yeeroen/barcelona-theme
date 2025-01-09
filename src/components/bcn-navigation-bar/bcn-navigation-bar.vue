@@ -1,5 +1,5 @@
 <template>
-    <div
+    <header
         :class="{
             'bcn-navigation-bar': true,
             'bcn-navigation-bar--open': open,
@@ -43,7 +43,7 @@
                     @search="search"
                 />
 
-                <div class="bcn-navigation-bar__navigation">
+                <nav class="bcn-navigation-bar__navigation">
                     <a
                         v-for="(item, index) in navigation"
                         :key="index"
@@ -52,10 +52,10 @@
                     >
                         {{ item.label }}
                     </a>
-                </div>
+                </nav>
             </div>
         </div>
-    </div>
+    </header>
 </template>
 
 <script setup>
