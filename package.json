@@ -1,6 +1,6 @@
 {
   "name": "@vemedia/bcn",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -25,5 +25,9 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "vite": "^4.4.5"
-  }
+  },
+  "repository": {
+    "url": "git://github.com/yeeroen/barcelona-theme.git"
+  },
+  "license": "ISC"
 }

@@ -17,4 +17,10 @@ $class: '.#{$identifier}';
     &--icon-position-right {
         flex-direction: row-reverse;
     }
+
+    &--type-secondary {
+        background: transparent;
+        color: var(--primary-button-background);
+        border: 1px solid var(--primary-button-background);
+    }
 }
